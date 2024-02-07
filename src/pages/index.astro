@@ -16,10 +16,33 @@ const pageTitle = 'My Home Page';
 	<body>
 	  <Header />
 	  <h1>{pageTitle}</h1>
-
+	  <div id="div1">some text</div> 
+	  <div id="bk"></div>
 	  <Footer />
 	  <script>
-		// add click event to 'hamberger'
+		function addElement() {
+  			// create a new div element
+  			const newDiv = document.createElement("div");
+
+			// and give it some content
+			const newContent = document.createTextNode("Hi there and greetings!");
+
+			// add the text node to the newly created div
+			newDiv.appendChild(newContent);
+
+			// add the newly created element and its content into the DOM
+			const currentDiv = document.getElementById("div1");
+			document.body.insertBefore(newDiv, currentDiv);
+		}
+		addElement()
+		const mb = document.createElement("button");
+		const ntext = document.createTextNode('My Button');
+		mb.appendChild(ntext);
+		const mydiv = document.getElementById('bk');
+		console.log(mb);
+		document.body.insertBefore(mb, mydiv);
+
+		// add click event to 'hamburger'
 		document.querySelector('.hamburger').addEventListener('click', () => {
 		  // select the navigation div and add or remove the .expanded class
 		  // this will show or hide the navigation links
