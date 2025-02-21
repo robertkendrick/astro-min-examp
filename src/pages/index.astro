@@ -43,10 +43,10 @@ const pageTitle = 'My Home Page';
 		document.body.insertBefore(mb, mydiv);
 
 		// add click event to 'hamburger'
-		document.querySelector('.hamburger').addEventListener('click', () => {
-		  // select the navigation div and add or remove the .expanded class
-		  // this will show or hide the navigation links
-			document.querySelector('.nav-links').classList.toggle('expanded');
+		document.querySelector('.hamburger')?.addEventListener('click', () => {
+		  	// select the navigation div and add or remove the .expanded class
+		  	// this will show or hide the navigation links
+			document.querySelector('.nav-links')?.classList.toggle('expanded');
 		});
 	  </script>
 	</body>
