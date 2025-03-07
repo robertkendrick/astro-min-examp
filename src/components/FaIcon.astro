@@ -1,0 +1,31 @@
+---
+import type {IconDefinition} from '@fortawesome/fontawesome-svg-core';
+import {icon} from '@fortawesome/fontawesome-svg-core';
+
+interface Props {
+  icon: IconDefinition
+}
+
+console.log(Astro.props.icon)
+
+// pass name of font-awesome icon - see below
+const iconHtml = icon(Astro.props.icon).html;
+---
+<style>
+    .icon {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        /* width: 1em;
+        height: 1em; */
+        vertical-align: -.20em;
+        color: red;
+    }
+</style>
+<i class="icon" set:html={iconHtml}></i>
+
+<!-- use like this
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import FaIcon from '../../../../components/FaIcon.astro';
+
+<FaIcon icon={faUser} -->

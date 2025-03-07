@@ -1,7 +1,17 @@
 ---
+import FaIcon from './FaIcon.astro'
+import {faHome} from '@fortawesome/free-solid-svg-icons'
+import {faBookOpenReader} from '@fortawesome/free-solid-svg-icons'
+import {faFileAudio} from '@fortawesome/free-solid-svg-icons'
 ---
 <div class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
+  <a href="/">Home <FaIcon icon={faHome}</a>
+  <a href="/about/">About <FaIcon icon={faBookOpenReader}</a>
+  <a href="/blog/">Blog <FaIcon icon={faFileAudio}</a>
 </div>
+
+<style>
+  a {
+    color:mediumslateblue
+  }
+</style>
