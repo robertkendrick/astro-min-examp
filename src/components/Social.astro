@@ -1,5 +1,11 @@
 ---
-const { platform, username } = Astro.props;
+const { platform, username }: SocialProps = Astro.props
+
+interface SocialProps {
+  platform: string;
+  username: string;
+}
+console.log(platform, username);
 ---
 <a href={`https://www.${platform}.com/${username}`}>{platform}</a>
 

@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+import {todos} from '../assets/data/todos';
+import TodoItem from '../components/solid/todoitem';
+
+function setCompleted(id: number, completed: boolean) {
+  console.log('Toggled todo with id:', id);
+}
+
+function doDelete(id: number) {
+    alert('Delete todo with id: ' + id);
+    // console.log('Deleted todo with id:', id);
+}
+---
+<main class="h-screen py-10 px-5 bg-gray-100 dark:bg-gray-900">
+<div>
+    <div>
+        <h1 class="font-bold text-3xl">My To-Do List (Solid)</h1>
+        <ul>
+            {todos.map((todo) => (
+                <TodoItem client:load 
+                    key={todo.id}
+                    todo={todo} 
+                    onToggle={setCompleted} 
+                    onDelete={doDelete} 
+                />
+            ))}
+        </ul>
+    </div>
+</div>
+</main>
