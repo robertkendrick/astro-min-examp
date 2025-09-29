@@ -6,15 +6,15 @@ interface Todos {
 
 export const todos = [
     {
-        id: 1,
+        id: 0,
         item: 'Learn Astro',
         completed: false,
     },
-    {   id: 2, 
+    {   id: 1, 
         item: 'Build a project', 
         completed: true
     },
-    {  id: 3, 
+    {  id: 2, 
         item: 'Deploy to production', 
         completed: false
     }

@@ -1,10 +1,6 @@
 // import {solid}   from 'solid-js';
+import type {Todo} from  '../../types'
 
-interface Todo {
-  id: number;
-  item: string;
-  completed: boolean;
-}
 
 interface TodoItemProps {
   key: number;
