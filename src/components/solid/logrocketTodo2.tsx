@@ -4,16 +4,23 @@ import { createStore } from 'solid-js/store';
 import '../../styles/global.css';
 import { set } from 'astro:schema';
 
+// This is implemented with Solidjs Stores
+
 type Task = {
-    id: string
+    id: number
     text: string
     completed: boolean
 }
 
+// const tds: Task[] = [
+//     { id: 'a1', text: 'Learn Solid.js', completed: false },
+//     { id: 'b2', text: 'Build a to-do app', completed: true },
+//     { id: 'c3', text: 'Integrate LogRocket', completed: false },
+// ]
 const tds: Task[] = [
-    { id: 'a1', text: 'Learn Solid.js', completed: false },
-    { id: 'b2', text: 'Build a to-do app', completed: true },
-    { id: 'c3', text: 'Integrate LogRocket', completed: false },
+    { id: 1, text: 'Learn Solid.js', completed: false },
+    { id: 2, text: 'Build a to-do app', completed: true },
+    { id: 3, text: 'Integrate LogRocket', completed: false },
 ]
 
 
@@ -38,7 +45,7 @@ export default function LogRocketTodos() {
     //     const updatedTasks = taskList.filter((task) => task.id !== id)
     //     setTaskList(updatedTasks)
     // }
-    const deleteTask = (taskId: string) => {
+    const deleteTask = (taskId: number) => {
         // setTaskList(
         //     'tasks',
         //     (task: Task) => task.id === taskId,  //A function to get the particular task we want to delete
@@ -55,7 +62,8 @@ export default function LogRocketTodos() {
         const input = form.taskInput as HTMLInputElement
         console.log(input.value)
         const newTask: Task = { 
-            id: Math.random().toString(36).substring(2), 
+//            id: Math.random().toString(36).substring(2), 
+            id: Math.random(),
             text: input.value, 
             completed: false,
         }
