@@ -6,15 +6,15 @@ interface Todos {
 
 export const todos = [
     {
-        id: 0,
+        id: Math.floor(Math.random() * 1000),
         item: 'Learn Astro',
         completed: false,
     },
-    {   id: 1, 
+    {   id: Math.floor(Math.random() * 1000), 
         item: 'Build a project', 
         completed: true
     },
-    {  id: 2, 
+    {  id: Math.floor(Math.random() * 1000), 
         item: 'Deploy to production', 
         completed: false
     }

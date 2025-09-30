@@ -25,7 +25,8 @@ export default function TodosList() {
             // The path syntax adds the new element by assigning it to the index equal
             //  to todoStore.todos.length, directly modifying the existing array.
             setTodos("todos", todoStore.todos.length, {
-                id: todoStore.todos.length,
+                //id: todoStore.todos.length, // bad
+                id: Math.floor(Math.random() * 1000),
                 item: title+todoStore.todos.length, // unique item name
                 completed: false,
             })
@@ -35,15 +36,16 @@ export default function TodosList() {
     function setCompleted(id: number, completed: boolean) {
         console.log('Toggled todo with id:', id, 'to', completed);
         
-        setTodos("todos", todoStore.todos[id].id === id 
-            ? {...todoStore.todos[id], completed} 
-            : todoStore.todos[id] );
+        // setTodos("todos", todoStore.todos[id].id === id 
+        //     ? {...todoStore.todos[id], completed} 
+        //     : todoStore.todos[id] );
 
-        //   setTodos(
-        //     (task) => task.id === id,
-        //     'completed',
-        //     (completed) => !completed,
-        //   )
+          setTodos(
+            'todos',
+            (task: Todo) => task.id === id,
+            'completed',
+            (completed) => !completed,
+          )
 
         
         // setTodos("todos", [id], "completed", completed)
