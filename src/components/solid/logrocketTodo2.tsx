@@ -32,7 +32,7 @@ export default function LogRocketTodos() {
     setTaskList("tasks", tds)
     console.log('Initial tasks:', taskList.tasks)
 
-    const toggleStatus = (taskId: string) => {
+    const toggleStatus = (taskId: number) => {
     setTaskList(
         'tasks',
         (task: Task) => task.id === taskId,   //A function to get the particular task we want to update
