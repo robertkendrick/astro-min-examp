@@ -1,5 +1,7 @@
 ---
-const { platform, username }: SocialProps = Astro.props
+// const { platform, username }: SocialProps = Astro.props
+
+const {platform, username} = Astro.props; 
 
 interface SocialProps {
   platform: string;
