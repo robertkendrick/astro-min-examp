@@ -4,7 +4,11 @@ import tailwindcss from '@tailwindcss/vite';
 
 import solidJs from '@astrojs/solid-js';
 
-import node from '@astrojs/node';
+
+
+import netlify from '@astrojs/netlify';
+
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,10 +17,6 @@ export default defineConfig({
   },
 
   integrations: [solidJs()],
-
   output: 'server',
-
-  adapter: node({
-    mode: 'standalone'
-  })
+  adapter: netlify(),
 });
