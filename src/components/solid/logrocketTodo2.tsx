@@ -1,8 +1,11 @@
 import { For } from 'solid-js';
 // import { createSignal } from 'solid-js';
 import { createStore } from 'solid-js/store';
+// import '../../styles/global.css';
+// import { set } from 'astro:schema';
+
 import '../../styles/global.css';
-import { set } from 'astro:schema';
+
 
 // This is implemented with Solidjs Stores
 

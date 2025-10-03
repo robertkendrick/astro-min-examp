@@ -3,7 +3,9 @@ import TodoItem from './todoitem';
 import { todos as tds } from '../../assets/data/todos';
 import type {Todo} from '../../types';
 import { createStore } from 'solid-js/store';
-import { set } from 'astro:schema';
+
+import '../../styles/global.css';
+// import { set } from 'astro:schema';
 
 
 
