@@ -5,21 +5,21 @@ import type {Todo} from '../../types';
 
 
 function deleteTodo(id: number) {
-  console.log('Deleted todo with id:', id);
+  // console.log('Deleted todo with id:', id);
 }
 
 
 export default function TodosList() {
   function setCompleted(id: number, completed: boolean) {
-    console.log('Toggled todo with id:', id, 'to', completed);
+    // console.log('Toggled todo with id:', id, 'to', completed);
       setTodos(todos().map(todo => {
-        console.log('before: ', todo)
+        // console.log('before: ', todo)
         if (todo.id === id) {
-          console.log('matched ids: ', todo.id, id, completed);
+          // console.log('matched ids: ', todo.id, id, completed);
         }
         todo.id === id ? {...todo, completed} : todo
-        // todo.completed ? console.log("Completed") : console.log("Not Completed")
-        console.log("after: ", todo)
+        // todo.completed ? //console.log("Completed") : console.log("Not Completed")
+        // console.log("after: ", todo)
         return todo;
       }
       ));
@@ -30,7 +30,7 @@ export default function TodosList() {
   setTodos(tds)
 
   createEffect(() => {
-    console.log("Todos changed: ", todos());
+    // console.log("Todos changed: ", todos());
   });  
 
   return (

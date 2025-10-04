@@ -1,10 +1,10 @@
+import '../../styles/global.css';
 import { For } from 'solid-js';
 // import { createSignal } from 'solid-js';
 import { createStore } from 'solid-js/store';
 // import '../../styles/global.css';
 // import { set } from 'astro:schema';
 
-import '../../styles/global.css';
 
 
 // This is implemented with Solidjs Stores
@@ -33,7 +33,7 @@ export default function LogRocketTodos() {
 
     // setTaskList(...tds)
     setTaskList("tasks", tds)
-    console.log('Initial tasks:', taskList.tasks)
+    // console.log('Initial tasks:', taskList.tasks)
 
     const toggleStatus = (taskId: number) => {
     setTaskList(
@@ -60,10 +60,10 @@ export default function LogRocketTodos() {
     
     const addTask = (e: Event) => {
         e.preventDefault()
-        console.log('************* adding task *************')
+        // console.log('************* adding task *************')
         const form = e.target as HTMLFormElement
         const input = form.taskInput as HTMLInputElement
-        console.log(input.value)
+        // console.log(input.value)
         const newTask: Task = { 
 //            id: Math.random().toString(36).substring(2), 
             id: Math.random(),

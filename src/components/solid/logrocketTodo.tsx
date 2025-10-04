@@ -19,10 +19,10 @@ export default function LogRocketTodos() {
     const [taskList, setTaskList] = createSignal([] as Task[])
 
     setTaskList(tds)
-    console.log('Initial tasks:', taskList())
+    // console.log('Initial tasks:', taskList())
 
     const toggleStatus = (id: string) => {
-        console.log('Toggling task status for id:', id) 
+        // console.log('Toggling task status for id:', id) 
 
         const updatedTasks = taskList().map((task) =>
           task.id === id ? { ...task, completed: !task.completed } : task
@@ -37,10 +37,10 @@ export default function LogRocketTodos() {
     
     const addTask = (e: Event) => {
         e.preventDefault()
-        console.log('************* adding task *************')
+        // console.log('************* adding task *************')
         const form = e.target as HTMLFormElement
         const input = form.taskInput as HTMLInputElement
-        console.log(input.value)
+        // console.log(input.value)
         const newTask: Task = { 
             id: Math.random().toString(36).substring(2), 
             text: input.value, 

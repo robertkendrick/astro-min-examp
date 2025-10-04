@@ -1,10 +1,10 @@
+import '../../styles/global.css';
 import { createEffect, createSignal, For } from 'solid-js';
 import TodoItem from './todoitem';
 import { todos as tds } from '../../assets/data/todos';
 import type {Todo} from '../../types';
 import { createStore } from 'solid-js/store';
 
-import '../../styles/global.css';
 // import { set } from 'astro:schema';
 
 
@@ -36,7 +36,7 @@ export default function TodosList() {
     }
     
     function setCompleted(id: number, completed: boolean) {
-        console.log('Toggled todo with id:', id, 'to', completed);
+        // console.log('Toggled todo with id:', id, 'to', completed);
         
         // setTodos("todos", todoStore.todos[id].id === id 
         //     ? {...todoStore.todos[id], completed} 
@@ -59,7 +59,7 @@ export default function TodosList() {
     }
     
     function deleteTodo(id: number) {
-      console.log('Deleted todo with id:', id);
+      // console.log('Deleted todo with id:', id);
     
     //  just testing adding a todo
     //   addTodo("New Task");
@@ -81,10 +81,10 @@ export default function TodosList() {
 
 
   createEffect(() => {
-    console.log("Todos changed: ", todoStore.todos);
-    console.log("Count is: ", todoStore.count);
+    // console.log("Todos changed: ", todoStore.todos);
+    // console.log("Count is: ", todoStore.count);
 
-    console.log('at(-1)', todoStore.todos.at(-1))
+    // console.log('at(-1)', todoStore.todos.at(-1))
   });  
 
   return (
