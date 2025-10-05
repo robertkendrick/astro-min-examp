@@ -1,8 +1,12 @@
 ---
-import '../styles/global.css';
+// import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+
 // import {todos} from '../assets/data/todos';
 import TodoList2 from '../components/solid/todosList2';
 ---
-<main class="h-screen py-10 px-5 bg-gray-100 dark:bg-gray-900">
-    <TodoList2 client:load />
-</main>
+<Layout title="My Todo List" description="A simple todo list built with Astro and Solid.">
+    <main class="py-10 px-5 bg-gray-100 dark:bg-gray-900">
+        <TodoList2 client:load />
+    </main>
+</Layout>

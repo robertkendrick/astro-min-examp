@@ -29,7 +29,7 @@ export default function TodosList() {
             setTodos("todos", todoStore.todos.length, {
                 //id: todoStore.todos.length, // bad
                 id: Math.floor(Math.random() * 1000),
-                item: title+todoStore.todos.length, // unique item name
+                item: title, // unique item name
                 completed: false,
             })
             setTodos("count", todoStore.todos.length);
@@ -91,10 +91,11 @@ export default function TodosList() {
     <div class="bg-white dark:bg-gray-900 py-10 px-5">
       <h1 class="font-bold text-3xl text-center m-4">My To-Do List (Solid)</h1>
       <div class="max-w-xl mx-auto bg-gray-100 shadow-md rounded-lg p-5">
+        <label>
+          {/* <input type="checkbox" name="cb" onClick={(event) => alert('Hello Solid Event!')} /> */}
+          <input class="border px-2" type="text" placeholder="Add a new task..." onchange={e => {addTodo(e.currentTarget.value); e.currentTarget.value=''}} />
+        </label>
         {/* Todo items will go here */}
-
-
-
         <For each={todoStore.todos} fallback={<div>Loading...</div>}>
           {(todo) => <TodoItem  
                         key={todo.id} 
@@ -105,10 +106,10 @@ export default function TodosList() {
           }
         </For> 
       </div>
-      <button onClick={ () => addTodo("New Task") } 
+      {/* <button onClick={ () => addTodo("New Task") } 
             class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4 hover:bg-blue-600">
             Add Todo
-      </button>
+      </button> */}
     </div>
-  );
+  ); 
 }

@@ -15,7 +15,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-
+  site: 'https://bobk.name/', // canonical URL for your site
   integrations: [solidJs()],
   output: 'server',
   adapter: netlify(),
